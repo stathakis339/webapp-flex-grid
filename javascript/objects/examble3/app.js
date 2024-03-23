@@ -7,13 +7,28 @@ const args = process.argv;            //The process.argv array contains command-
 // console.log(args);                    // Prints the entire args array to the console
 
 let command = args[2];                // Extract the third argument and asign it the command varieble
+let values = args[3];
 
-if ( command === 'showAll'){
-  let results = readFileSync('data.json','utf-8');
-  console.log(JSON.parse(results));                // It will show the names from the data array
-} 
+let result = ``;
 
-// if (command === `showOne`){
-//   results = readFileSync
-// }
-
+switch(command){
+  case'crate':
+    console.log('Create');
+    break;
+  case'delete':
+    console.log('Delete');
+    break;
+  case'update':
+    console.log('Update');
+    break;
+  case'showOne':
+    results = readFileSync('data.json','utf-8');     // Read
+    let user = JSON.parse(results);                  // Return object
+    //console.log(user.data);
+    let item = user.data.find(val=>val.username === values);  // Data(KEY), find and show user4 details, (find=return element  and filter=[element] )
+    console.log(item);
+    break;
+  default:
+    results = readFileSync('data.json','utf-8');
+    console.log(JSON.parse(results));                // It will show the names from the data array
+}
