@@ -1,4 +1,5 @@
-const {readFileSync} = require('fs');   //call fs , bring me readFileSync //const json = require('./data.json');   Imports the contents of a JSON file
+const { showOne, showAll } = require('./User.js');
+
 
 //const data = json.data;               // Extract "data" and assign it to a new variable called data
 
@@ -9,7 +10,7 @@ const args = process.argv;            //The process.argv array contains command-
 let command = args[2];                // Extract the third argument and asign it the command varieble
 let values = args[3];
 
-let result = ``;
+let results = ``;
 
 switch(command){
   case'crate':
@@ -22,13 +23,10 @@ switch(command){
     console.log('Update');
     break;
   case'showOne':
-    results = readFileSync('data.json','utf-8');     // Read
-    let user = JSON.parse(results);                  // Return object
-    //console.log(user.data);
-    let item = user.data.find(val=>val.username === values);  // Data(KEY), find and show user4 details, (find=return element  and filter=[element] )
-    console.log(item);
+    results = showOne(values);
+    console.log(results);
     break;
   default:
-    results = readFileSync('data.json','utf-8');
-    console.log(JSON.parse(results));                // It will show the names from the data array
-}
+    results =showAll();
+    console.log(results);
+  }
