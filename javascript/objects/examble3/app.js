@@ -1,4 +1,4 @@
-const { showOne, showAll } = require('./User.js');
+const { showOne, showAll, remove } = require('./User.js');
 
 
 //const data = json.data;               // Extract "data" and assign it to a new variable called data
@@ -17,7 +17,12 @@ switch(command){
     console.log('Create');
     break;
   case'delete':
-    console.log('Delete');
+    results = remove(values);
+    if (results.status) {
+      console.log("Succesfull deleted user", results.values);
+    } else {
+      console.log("Problem in deleting user", results.values);
+    }
     break;
   case'update':
     console.log('Update');
