@@ -1,0 +1,24 @@
+{
+  "name": "myapp1",
+  "version": "1.0.0",
+  "description": "My first node app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stathakis339/webapp-flex-grid.git"
+  },
+  "author": "Stathakis Eleftherios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stathakis339/webapp-flex-grid/issues"
+  },
+  "homepage": "https://github.com/stathakis339/webapp-flex-grid#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
