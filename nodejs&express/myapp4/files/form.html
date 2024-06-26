@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <p>Δημιουργία χρήστη</p>
+    <form method="post" action="/userForm">
+        <ul>
+            <li>
+                <label for="firstname">Όνομα:</label>
+                <input type="text" name="firstname" id="firstname">
+            </li>
+            <li>
+                <label for="lastname">Επίθετο:</label>
+                <input type="text" name="lastname" id="lastname">
+            </li>
+            <li>
+                <input type="submit" value="Υποβολή">
+                <input type="reset" value="Καθάρισμα">
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

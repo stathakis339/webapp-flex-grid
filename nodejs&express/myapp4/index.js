@@ -8,6 +8,8 @@ const bodyParse = require('body-parser'); // variable with the properties of bod
 app.use(bodyParse.json());                // the fields of the form will have a json form (object  field: key:value)
 app.use(bodyParse.urlencoded({ extended:false }));  // x-www-urlencoded utf-8 (default forms)
 //app.use('/user', ()=>{})
+app.use('/', express.static('files'));         // serve static files
+
 
 app.get('/user',(req,res) => {
     console.log(req.query);
@@ -33,6 +35,15 @@ app.post('/user', (req, res) =>{         // we have post call , they sent us var
 
     res.send ('POST>>>  Name: ' + name + ', Surname: ' + surname);
 })
+
+app.post('/userForm', (req, res) =>{
+    console.log(req.body);
+
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
+
+    res.send ('Name: ' + firstname + ', Lastname: ' + lastname );
+});
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
